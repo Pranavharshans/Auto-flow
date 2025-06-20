@@ -1,0 +1,305 @@
+# 📚 Glossary - Google ADK
+
+> **Comprehensive glossary of terms and concepts used throughout Google ADK**
+
+## 🎯 Overview
+
+This glossary provides definitions for key terms, concepts, and components used in Google ADK documentation and development.
+
+---
+
+## A
+
+**Agent** - An AI-powered entity that can process inputs, make decisions, and take actions using large language models and tools.
+
+**Agent Development Kit (ADK)** - Google's comprehensive framework for building, deploying, and managing AI agents.
+
+**API Key** - A unique identifier used to authenticate requests to Google ADK services.
+
+**ABAC (Attribute-Based Access Control)** - A security model that grants access based on attributes of users, resources, and environment.
+
+**Async/Await** - Programming patterns for handling asynchronous operations in Python and other languages.
+
+---
+
+## B
+
+**Batch Processing** - Processing multiple inputs simultaneously to improve efficiency and throughput.
+
+**Bearer Token** - An authentication token included in HTTP headers to authorize API requests.
+
+**Built-in Tools** - Pre-configured tools provided by Google ADK for common tasks like search, database access, and email.
+
+---
+
+## C
+
+**Caching** - Storing frequently accessed data or computed results to improve performance and reduce costs.
+
+**Chain of Thought** - A reasoning technique where the AI agent breaks down complex problems into step-by-step solutions.
+
+**Configuration** - Settings and parameters that control agent behavior, performance, and integration.
+
+**Context Window** - The maximum amount of text an AI model can process in a single request.
+
+**Custom Tools** - User-defined tools that extend agent capabilities for specific use cases or integrations.
+
+---
+
+## D
+
+**Deployment** - The process of making agents available in production environments.
+
+**Docker** - Containerization platform used for packaging and deploying ADK applications.
+
+---
+
+## E
+
+**Embedding** - Vector representations of text used for semantic search and similarity matching.
+
+**Event Handler** - Functions that respond to specific events during agent execution.
+
+**Exception** - Error conditions that occur during agent processing and require handling.
+
+---
+
+## F
+
+**Function Calling** - The ability for AI models to invoke external functions or tools during processing.
+
+**Fallback** - Alternative processing paths when primary methods fail or are unavailable.
+
+---
+
+## G
+
+**Gemini** - Google's advanced large language model used in ADK agents.
+
+**gRPC** - A high-performance RPC framework used for service communication.
+
+---
+
+## H
+
+**HTTP/HTTPS** - Web protocols used for API communication and service integration.
+
+**Hot Reloading** - Development feature that automatically updates applications when code changes.
+
+---
+
+## I
+
+**Instruction** - System-level prompts that define an agent's role, behavior, and capabilities.
+
+**Integration** - Connecting ADK agents with external systems, APIs, and services.
+
+---
+
+## J
+
+**JSON** - JavaScript Object Notation, a data format used for configuration and API communication.
+
+**JWT (JSON Web Token)** - A standard for securely transmitting information between parties.
+
+---
+
+## K
+
+**Knowledge Base** - Structured information repositories that agents can access for answering questions.
+
+**Kubernetes** - Container orchestration platform for deploying and managing ADK applications at scale.
+
+---
+
+## L
+
+**LLM (Large Language Model)** - AI models trained on vast amounts of text data to understand and generate human language.
+
+**Load Balancing** - Distributing incoming requests across multiple instances for better performance.
+
+---
+
+## M
+
+**Memory** - Systems that allow agents to retain information across conversations and interactions.
+
+**Metadata** - Additional information about requests, responses, and system operations.
+
+**Multi-Agent System** - Architectures involving multiple specialized agents working together.
+
+**mTLS (Mutual TLS)** - Secure communication protocol where both client and server authenticate each other.
+
+---
+
+## N
+
+**Natural Language Processing (NLP)** - AI techniques for understanding and generating human language.
+
+---
+
+## O
+
+**OAuth 2.0** - Industry-standard protocol for authorization and secure API access.
+
+**Orchestration** - Coordinating the execution of multiple agents or workflows.
+
+---
+
+## P
+
+**Parallel Processing** - Executing multiple operations simultaneously to improve performance.
+
+**Prompt Engineering** - The practice of crafting effective instructions and inputs for AI models.
+
+---
+
+## Q
+
+**Query** - A request or question submitted to an agent for processing.
+
+---
+
+## R
+
+**RBAC (Role-Based Access Control)** - Security model that grants access based on user roles and permissions.
+
+**Rate Limiting** - Controlling the frequency of requests to prevent abuse and ensure fair usage.
+
+**Redis** - In-memory data store commonly used for caching and session management.
+
+**Response** - The output generated by an agent in response to a user query or input.
+
+---
+
+## S
+
+**Streaming** - Real-time delivery of responses as they are generated, rather than waiting for completion.
+
+**SSO (Single Sign-On)** - Authentication method allowing users to access multiple applications with one set of credentials.
+
+**SDK (Software Development Kit)** - Tools and libraries for building applications with Google ADK.
+
+---
+
+## T
+
+**Tool** - External capabilities that agents can invoke to perform specific tasks or access information.
+
+**Token** - Units of text that AI models process; used for billing and rate limiting.
+
+**TLS/SSL** - Cryptographic protocols for secure communication over networks.
+
+---
+
+## U
+
+**User Context** - Information about the user making requests, including identity and preferences.
+
+---
+
+## V
+
+**Vector Database** - Specialized database for storing and searching high-dimensional vector data.
+
+**Vertex AI** - Google Cloud's machine learning platform that powers ADK capabilities.
+
+---
+
+## W
+
+**Webhook** - HTTP callbacks used for real-time notifications and integrations.
+
+**Workflow** - Structured sequences of agent operations and decision points.
+
+---
+
+## X
+
+**XML** - Markup language used for structured data exchange in some integrations.
+
+---
+
+## Y
+
+**YAML** - Human-readable data serialization standard used for configuration files.
+
+---
+
+## Z
+
+**Zero-shot Learning** - AI capability to perform tasks without specific training examples.
+
+---
+
+## Common Abbreviations
+
+- **ADK** - Agent Development Kit
+- **AI** - Artificial Intelligence
+- **API** - Application Programming Interface
+- **CPU** - Central Processing Unit
+- **DB** - Database
+- **DNS** - Domain Name System
+- **GCP** - Google Cloud Platform
+- **GPU** - Graphics Processing Unit
+- **HTTP** - HyperText Transfer Protocol
+- **IDE** - Integrated Development Environment
+- **IP** - Internet Protocol
+- **ML** - Machine Learning
+- **NLP** - Natural Language Processing
+- **OS** - Operating System
+- **RAM** - Random Access Memory
+- **REST** - Representational State Transfer
+- **SaaS** - Software as a Service
+- **SQL** - Structured Query Language
+- **UI** - User Interface
+- **URL** - Uniform Resource Locator
+- **UX** - User Experience
+- **VM** - Virtual Machine
+
+---
+
+## Status Codes
+
+### HTTP Status Codes
+- **200 OK** - Successful request
+- **201 Created** - Resource successfully created
+- **400 Bad Request** - Invalid request format
+- **401 Unauthorized** - Authentication required
+- **403 Forbidden** - Access denied
+- **404 Not Found** - Resource not found
+- **429 Too Many Requests** - Rate limit exceeded
+- **500 Internal Server Error** - Server error
+
+### Agent Status Codes
+- **ACTIVE** - Agent is running and available
+- **INACTIVE** - Agent is not currently running
+- **PROCESSING** - Agent is executing a task
+- **ERROR** - Agent encountered an error
+- **MAINTENANCE** - Agent is under maintenance
+
+---
+
+## File Extensions
+
+- **.py** - Python source files
+- **.json** - JSON configuration files
+- **.yaml/.yml** - YAML configuration files
+- **.md** - Markdown documentation files
+- **.env** - Environment variable files
+- **.toml** - TOML configuration files
+- **.txt** - Text files
+- **.log** - Log files
+
+---
+
+## Environment Types
+
+- **Development** - Local development environment
+- **Staging** - Pre-production testing environment
+- **Production** - Live production environment
+- **Testing** - Automated testing environment
+
+---
+
+> **📖 Need more information?** Check the [main documentation](../README.md) or visit specific sections for detailed explanations! 
