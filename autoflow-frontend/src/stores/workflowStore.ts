@@ -1,7 +1,7 @@
 import { create } from 'zustand';
-import { AgentNode, WorkflowConnection, Workflow } from '../types';
+import { AgentNode, WorkflowConnection } from '../types';
 
-interface WorkflowStore {
+interface WorkflowState {
   // Current workflow state
   nodes: AgentNode[];
   edges: WorkflowConnection[];
@@ -21,7 +21,7 @@ interface WorkflowStore {
   setGeneratedCode: (code: string) => void;
 }
 
-export const useWorkflowStore = create<WorkflowStore>((set, get) => ({
+export const useWorkflowStore = create<WorkflowState>((set, get) => ({
   // Initial state
   nodes: [],
   edges: [],
@@ -30,18 +30,22 @@ export const useWorkflowStore = create<WorkflowStore>((set, get) => ({
   
   // Node operations
   addNode: (node) => set((state) => ({
-    nodes: [...state.nodes, node]
+    nodes: [...state.nodes, node],
+    selectedNode: node
   })),
   
   updateNode: (id, updates) => set((state) => ({
-    nodes: state.nodes.map(node => 
+    nodes: state.nodes.map((node) =>
       node.id === id ? { ...node, ...updates } : node
-    )
+    ),
+    selectedNode: state.selectedNode?.id === id 
+      ? { ...state.selectedNode, ...updates }
+      : state.selectedNode
   })),
   
   deleteNode: (id) => set((state) => ({
-    nodes: state.nodes.filter(node => node.id !== id),
-    edges: state.edges.filter(edge => edge.source !== id && edge.target !== id),
+    nodes: state.nodes.filter((node) => node.id !== id),
+    edges: state.edges.filter((edge) => edge.source !== id && edge.target !== id),
     selectedNode: state.selectedNode?.id === id ? null : state.selectedNode
   })),
   
