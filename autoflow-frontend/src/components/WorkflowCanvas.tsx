@@ -1,12 +1,10 @@
 import React, { useCallback, useRef } from 'react';
 import ReactFlow, {
-  addEdge,
   useNodesState,
   useEdgesState,
   Controls,
   Background,
   Connection,
-  Edge,
   ReactFlowProvider,
   ReactFlowInstance,
 } from 'reactflow';
