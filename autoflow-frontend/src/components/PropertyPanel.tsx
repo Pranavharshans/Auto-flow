@@ -6,7 +6,7 @@ import { AgentNode } from '../types';
 const PropertyPanel: React.FC = () => {
   const { selectedNode, updateNode, deleteNode } = useWorkflowStore();
   
-  const { register, handleSubmit, watch, setValue } = useForm<AgentNode>({
+  const { register, handleSubmit, setValue } = useForm<AgentNode>({
     defaultValues: selectedNode || undefined,
   });
 
