@@ -17,7 +17,7 @@ Access real-time web information through Google's search infrastructure.
 ```python
 from google.adk.tools import google_search
 
-# Basic usage
+# Basic usage 
 search_agent = Agent(
     name="research_assistant",
     model="gemini-2.0-flash-exp",
