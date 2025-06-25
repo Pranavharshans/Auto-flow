@@ -14,10 +14,38 @@ import { useWorkflowStore } from '../stores/workflowStore';
 import { AgentNode } from '../types';
 import LLMAgentNode from './nodes/LLMAgentNode';
 import SequentialWorkflowNode from './nodes/SequentialWorkflowNode';
+import ParallelWorkflowNode from './nodes/ParallelWorkflowNode';
+import ConditionalNode from './nodes/ConditionalNode';
+import LoopNode from './nodes/LoopNode';
+import InputNode from './nodes/InputNode';
+import OutputNode from './nodes/OutputNode';
+import ApiCallNode from './nodes/ApiCallNode';
+import DatabaseNode from './nodes/DatabaseNode';
+import FileOperationsNode from './nodes/FileOperationsNode';
+import DataTransformNode from './nodes/DataTransformNode';
+import ValidatorNode from './nodes/ValidatorNode';
+import RouterNode from './nodes/RouterNode';
+import DelayNode from './nodes/DelayNode';
+import DebugNode from './nodes/DebugNode';
+import VariableNode from './nodes/VariableNode';
 
 const nodeTypes = {
   'llm-agent': LLMAgentNode,
   'sequential-workflow': SequentialWorkflowNode,
+  'parallel-workflow': ParallelWorkflowNode,
+  'conditional': ConditionalNode,
+  'loop': LoopNode,
+  'input': InputNode,
+  'output': OutputNode,
+  'api-call': ApiCallNode,
+  'database': DatabaseNode,
+  'file-operations': FileOperationsNode,
+  'data-transform': DataTransformNode,
+  'validator': ValidatorNode,
+  'router': RouterNode,
+  'delay': DelayNode,
+  'debug': DebugNode,
+  'variable': VariableNode,
 };
 
 const WorkflowCanvas: React.FC = () => {
@@ -94,13 +122,139 @@ const WorkflowCanvas: React.FC = () => {
         y: event.clientY - reactFlowBounds.top,
       });
 
+      const getNodeDefaults = (nodeType: string) => {
+        switch (nodeType) {
+          case 'llm-agent':
+            return {
+              name: 'New Agent',
+              instruction: 'Enter your agent instruction here...',
+              model: 'gemini-2.0-flash-exp',
+            };
+          case 'sequential-workflow':
+            return {
+              name: 'Sequential Workflow',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+            };
+          case 'parallel-workflow':
+            return {
+              name: 'Parallel Workflow',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+            };
+          case 'conditional':
+            return {
+              name: 'Conditional',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+              condition: '',
+              conditionType: 'equals' as const,
+            };
+          case 'loop':
+            return {
+              name: 'Loop',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+              loopType: 'fixed-count' as const,
+              loopCount: 1,
+            };
+          case 'input':
+            return {
+              name: 'Input',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+              inputType: 'text' as const,
+              placeholder: 'Enter input...',
+            };
+          case 'output':
+            return {
+              name: 'Output',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+              outputFormat: 'text' as const,
+            };
+          case 'api-call':
+            return {
+              name: 'API Call',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+              apiMethod: 'GET' as const,
+              apiUrl: '',
+            };
+          case 'database':
+            return {
+              name: 'Database',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+              dbType: 'mysql' as const,
+              dbOperation: 'select' as const,
+            };
+          case 'file-operations':
+            return {
+              name: 'File Operations',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+              fileOperation: 'read' as const,
+              fileFormat: 'txt' as const,
+            };
+          case 'data-transform':
+            return {
+              name: 'Data Transform',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+              transformType: 'map' as const,
+            };
+          case 'validator':
+            return {
+              name: 'Validator',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+              validationType: 'required' as const,
+            };
+          case 'router':
+            return {
+              name: 'Router',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+              routingRules: [],
+            };
+          case 'delay':
+            return {
+              name: 'Delay',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+              delayAmount: 1,
+              delayUnit: 'seconds' as const,
+            };
+          case 'debug':
+            return {
+              name: 'Debug',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+            };
+          case 'variable':
+            return {
+              name: 'Variable',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+              variableName: 'variable',
+              variableType: 'string' as const,
+            };
+          default:
+            return {
+              name: 'New Node',
+              instruction: '',
+              model: 'gemini-2.0-flash-exp',
+            };
+        }
+      };
+
+      const defaults = getNodeDefaults(type);
       const newNode: AgentNode = {
         id: `${type}-${Date.now()}`,
-        type: type as 'llm-agent' | 'sequential-workflow',
-        name: type === 'llm-agent' ? 'New Agent' : 'Sequential Workflow',
-        instruction: type === 'llm-agent' ? 'Enter your agent instruction here...' : '',
-        model: 'gemini-2.0-flash-exp',
+        type: type as AgentNode['type'],
         position,
+        ...defaults,
       };
 
       addNode(newNode);

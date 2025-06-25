@@ -14,9 +14,7 @@ function App() {
       {/* Main Content Area */}
       <div className="flex-1 flex overflow-hidden">
         {/* Component Palette */}
-        <div className="w-64 bg-white border-r border-gray-200 flex-shrink-0">
-          <ComponentPalette />
-        </div>
+        <ComponentPalette />
         
         {/* Main Canvas */}
         <div className="flex-1 relative">
@@ -24,9 +22,7 @@ function App() {
         </div>
         
         {/* Property Panel */}
-        <div className="w-80 bg-white border-l border-gray-200 flex-shrink-0">
-          <PropertyPanel />
-        </div>
+        <PropertyPanel />
       </div>
     </div>
   );
